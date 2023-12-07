@@ -22,7 +22,7 @@ void encontrarMaxMin(const int *vetor, int tamanho, int *maximo, int *minimo) {
     }
 }
 
-int main() {    // Teste da função com diferentes vetores
+int main() { // Teste com diferentes vetores
 
     int vetor1[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3};
     int tamanho1 = sizeof(vetor1) / sizeof(vetor1[0]);
