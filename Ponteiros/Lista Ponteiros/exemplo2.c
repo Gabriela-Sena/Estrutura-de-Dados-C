@@ -27,6 +27,6 @@ int main(){
     //ptr - endereço em que a variavel esta armazenada e que ptr aponta
     //&ptr - endereço de ptr
     //var - coteudo de var
-    //&var - endereço de var, mesmo que *ptr
+    //&var - endereço de var, mesmo que ptr
 
 }
