@@ -9,13 +9,15 @@ struct Carro {
 };
 
 struct Carro* encontraMaisVelho(struct Carro* carros, int tamanho) {
+    int i;
+
     if (tamanho <= 0) {
         return NULL;
     }
 
     struct Carro* maisVelho = &carros[0];
 
-    for (int i = 1; i < tamanho; i++) {
+    for (i = 1; i < tamanho; i++) {
         if (carros[i].ano < maisVelho->ano) {
             maisVelho = &carros[i];
         }
@@ -25,13 +27,14 @@ struct Carro* encontraMaisVelho(struct Carro* carros, int tamanho) {
 }
 
 struct Carro* encontraMaisBarato(struct Carro* carros, int tamanho) {
+    int i;
     if (tamanho <= 0) {
         return NULL;
     }
 
     struct Carro* maisBarato = &carros[0];
 
-    for (int i = 1; i < tamanho; i++) {
+    for (i = 1; i < tamanho; i++) {
         if (carros[i].valor < maisBarato->valor) {
             maisBarato = &carros[i];
         }
@@ -41,28 +44,29 @@ struct Carro* encontraMaisBarato(struct Carro* carros, int tamanho) {
 }
 
 int main() {
+    int i;
 
     struct Carro carros[4] = {
-        {"Marca1", "Modelo1", 2000, 10000.0},
-        {"Marca2", "Modelo2", 2010, 12000.0},
-        {"Marca3", "Modelo3", 2005, 8000.0},
+        {"Chevrolet", "Cruze", 2019, 49000.0},
+        {"Fiat", "Punto", 2010, 35000.0},
+        {"Renault", "Kwid", 2022, 60000.0},
     };
 
-    printf("Digite a marca do último carro: ");
+    printf("Digite a marca do ultimo carro: ");
     scanf("%s", carros[3].marca);
-    printf("Digite o modelo do último carro: ");
+    printf("Digite o modelo do ultimo carro: ");
     scanf("%s", carros[3].modelo);
-    printf("Digite o ano do último carro: ");
+    printf("Digite o ano do ultimo carro: ");
     scanf("%d", &carros[3].ano);
-    printf("Digite o valor do último carro: ");
+    printf("Digite o valor do ultimo carro: ");
     scanf("%f", &carros[3].valor);
 
     struct Carro* maisVelho = encontraMaisVelho(carros, 4);
     struct Carro* maisBarato = encontraMaisBarato(carros, 4);
 
-    printf("\nInformações dos Carros:\n");
+    printf("\nCarros Cadastrados:\n");
 
-    for (int i = 0; i < 4; i++) {
+    for (i = 0; i < 4; i++) {
         printf("Carro %d:\n", i + 1);
         printf("Marca: %s\n", carros[i].marca);
         printf("Modelo: %s\n", carros[i].modelo);
